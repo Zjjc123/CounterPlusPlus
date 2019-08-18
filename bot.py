@@ -14,10 +14,10 @@ async def on_message(message):
     if message.channel.name == "counting":
         countingChannel = client.get_channel(message.channel.id)
         number = int(message.content) + 1
-        await countingChannel.edit(topic = "next count: " + str(number))
-    for num in cool_nums:
-        if message.content == num:
-            await message.pin()
+        await countingChannel.edit(topic = "Next Count: " + str(number))
+        for num in cool_nums:
+            if message.content == num:
+                await message.pin()
     
 @client.event
 async def on_ready():  
