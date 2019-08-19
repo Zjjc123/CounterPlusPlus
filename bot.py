@@ -1,9 +1,9 @@
 # invite link
 # https://discordapp.com/oauth2/authorize?&client_id=612723457804861527&scope=bot&permissions=8
 import discord
-
+import os
 client = discord.Client()
-token = "NjEyNzIzNDU3ODA0ODYxNTI3.XVodqw.YTGe93t7K0D9zAZcix2s_LRE8yI"
+token = os.environ["BOT_TOKEN"]
 
 cool_nums = ["69", "420", "1000", "1234", "2000", "3000", "4200", "6969", "10000", "100000"]
 
