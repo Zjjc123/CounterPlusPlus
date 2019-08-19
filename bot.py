@@ -3,9 +3,9 @@
 import discord
 
 client = discord.Client()
-token = "NjEyNzIzNDU3ODA0ODYxNTI3.XVmhSQ.zNP_-wDCkBqxQu7OGwURgLMfqb8"
+token = "NjEyNzIzNDU3ODA0ODYxNTI3.XVnAAQ.QuP3V6mec_cT8VhmQl6X5XDppjc"
 
-cool_nums = ["69", "420", "1000", "2000", "3000", "4200", "6969", "10000", "100000"]
+cool_nums = ["69", "420", "1000", "1234", "2000", "3000", "4200", "6969", "10000", "100000"]
 
 @client.event
 async def on_message(message):
@@ -13,8 +13,13 @@ async def on_message(message):
         return
     if message.channel.name == "counting":
         countingChannel = client.get_channel(message.channel.id)
-        number = int(message.content) + 1
-        await countingChannel.edit(topic = "Next Count: " + str(number))
+        print(countingChannel.topic[12:])
+        if message.content != countingChannel.topic[12:]:
+            await message.delete()
+        else:
+            number = int(message.content) + 1
+            await countingChannel.edit(topic = "Next Count: " + str(number))
+
         for num in cool_nums:
             if message.content == num:
                 await message.pin()
@@ -24,6 +29,6 @@ async def on_ready():
     print('Joined Server as')
     print(client.user.name)
     print(client.user.id)
-    print("---------------")
+    print("------------------")
 
 client.run(token)
