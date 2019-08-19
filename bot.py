@@ -3,7 +3,7 @@
 import discord
 
 client = discord.Client()
-token = "NjEyNzIzNDU3ODA0ODYxNTI3.XVoNmw.eXiGfHVB6aur53w7-ZzOUvu9IJ0"
+token = "NjEyNzIzNDU3ODA0ODYxNTI3.XVodqw.YTGe93t7K0D9zAZcix2s_LRE8yI"
 
 cool_nums = ["69", "420", "1000", "1234", "2000", "3000", "4200", "6969", "10000", "100000"]
 
